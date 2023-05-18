@@ -2,8 +2,8 @@
 include_once 'Responsable.php';
 include_once 'Empresa.php';
 include_once 'Viaje.php';
-include_once 'ViajeInt';
-include_once 'ViajeNac';
+include_once 'ViajeInt.php';
+include_once 'ViajeNac.php';
 include_once 'Terminal.php';
 
 //Responsables
@@ -48,4 +48,8 @@ $terminal1 = new Terminal("Super Terminal", "aca nomas 123", $colEmpre);
 //coleccion viaje menor Valor
 $colViajesEconomicos = $terminal1->darViajeMenorValor();
 echo "Vealo usted mismo: \n";
-echo $colViajesEconomicos;
+
+for ($z = 0; $z < count($colViajesEconomicos); $z++){
+     echo $colViajesEconomicos[$z] . "\n------------------------------------------------\n";
+}
+echo "A este Punto final de los Finales, no le siguen dos puntos suspensivos. ";

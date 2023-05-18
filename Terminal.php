@@ -68,10 +68,10 @@ class Terminal{
                 $importeMenor = 100000;
                 $colViajes = $colEmpresas[$i]->getColViajes();
                 for ($j = 0; $j < count($colViajes); $j++){
-                    $costo = $colViajes->calcularImporteViaje();
+                    $costo = $colViajes[$j]->calcularImporteViaje();
                     if ($importeMenor > $costo){
                         $importeMenor = $costo;
-                        $colViajesMasEco[$i] = $colViajes;
+                        $colViajesMasEco[$i] = $colViajes[$j];
                     }
                 }
             }
