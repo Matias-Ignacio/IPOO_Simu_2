@@ -83,9 +83,19 @@ class Empresa{
     public function darCostoViaje($codigo){
         $importe = 0;
         $objViaje = $this->buscarviaje($codigo);
-
+        $importe = $objViaje->calcularImporteViaje();
         return $importe;
     }
 
+    /**
+     * Agrega un viaje a la empresa
+     * @param Viaje $objViaje
+     * 
+     */
+    public function agregarViaje($objViaje){
+    $coleccion = $this->getColViajes();
+    $coleccion[] = $objViaje;
+    $this->setColViajes($coleccion);
+    }
 
 }

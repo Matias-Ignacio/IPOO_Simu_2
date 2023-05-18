@@ -62,9 +62,20 @@ class Terminal{
          * @return array
          */
         public function darViajeMenorValor(){
-            $colViajes = [];
-            
-            return $colViajes;
+            $colViajesMasEco = [];
+            $colEmpresas = $this->getColEmpresas();
+            for ($i = 0; $i < count($colEmpresas); $i++){
+                $importeMenor = 100000;
+                $colViajes = $colEmpresas[$i]->getColViajes();
+                for ($j = 0; $j < count($colViajes); $j++){
+                    $costo = $colViajes->calcularImporteViaje();
+                    if ($importeMenor > $costo){
+                        $importeMenor = $costo;
+                        $colViajesMasEco[$i] = $colViajes;
+                    }
+                }
+            }
+            return $colViajesMasEco;
         }
  
 }

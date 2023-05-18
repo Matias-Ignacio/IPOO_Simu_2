@@ -104,7 +104,7 @@ class Viaje{
         $importe = 0;
         $base = $this->getMontoBase();
         $asientosV = $this->getCantAsientosTot() - $this->getCantAsientosDisp();
-        $importe = $base + ($base * $asientosV / $this->getCantAsientosTot());
+        $importe += ($base * $asientosV / $this->getCantAsientosTot());
         return $importe;
     }
 }
