@@ -35,9 +35,8 @@ class ViajeNac extends Viaje{
      */
     public function calcularImporteViaje(){
         $importe = 0;
-        $base = $this->getMontoBase();
-        $asientosV = $this->getCantAsientosTot() - $this->getCantAsientosDisp();
-        $importe = $base + ($base * $asientosV / $this->getCantAsientosTot());
+   
+        $importe = parent::calcularImporteViaje();
         $importe -= ($importe * ($this->getPorcentajeDescuento()/100));
         return $importe;
     }

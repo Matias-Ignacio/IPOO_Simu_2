@@ -29,17 +29,9 @@ $viajeInt5 = new ViajeInt("Colombia", "32", "20", 1234, 5000, "23-05-2024", 30, 
 $viajeInt6 = new ViajeInt("Temuco", "13", "12", 1212, 4000, "12.06-2023", 20, 2, $rey, false);
 
 //Agregar viajes a las empresas
-$viaTang->agregarViaje($viajeNac1);
-$viaTang->agregarViaje($viajeNac2);
-$viaTang->agregarViaje($viajeInt1);
-$viaTang->agregarViaje($viajeInt2);
-$viaTang->agregarViaje($viajeInt3);
 
-$transCoco->agregarViaje($viajeNac3);
-$transCoco->agregarViaje($viajeNac4);
-$transCoco->agregarViaje($viajeInt4);
-$transCoco->agregarViaje($viajeInt5);
-$transCoco->agregarViaje($viajeInt6);
+$viaTang->setColViajes([$viajeNac1, $viajeNac2, $viajeInt1, $viajeInt2, $viajeInt3]);
+$transCoco->setColViajes([$viajeNac3, $viajeNac4 ,$viajeInt4, $viajeInt5, $viajeInt6]);
 
 //Terminal
 $colEmpre = [$viaTang, $transCoco, $elViajero];
