@@ -44,7 +44,6 @@ class ViajeInt extends Viaje{
      * @return int
      */
     public function calcularImporteViaje(){
-        $importe = 0;
         $importe = parent::calcularImporteViaje() * (($this->getPorcentajeImp()/100) + 1);
         return $importe;
     }
